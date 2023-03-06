@@ -30,7 +30,7 @@ function userInput(){
 //Confronto array
 function confrontoArray(){
 for(let i=0;i<5;i++){
-    if(userArray===num){
+    if(userArray[i]===num[i]){
         arrayWin.push(userArray);
         console.log('Hai vinto');
     }
@@ -42,17 +42,17 @@ for(let i=0;i<5;i++){
                     // Main
 //Creazione Ciclo for Array numeri random
 let num=[];
-const ulist = document.querySelector('.list');
+const list = document.querySelector('.list-element');
+console.log(list);
 for(let i=0; i<5; i++){
-    const randomNum = getRandomInt(1,90);
+    const randomNum = getRandomInt(1,5);
     num.push(randomNum);
-    let list = elementCreator('li','list-item', num[i]);
-    myAppendElement('list',list);
+     list.innerHTML = num;
 }
 console.log(num);
 //Creazione timeout 30s per poi inserire 5 prompt
-// let userArray=[];
-setTimeout(userInput, 30000);
-//Confronto array
+let userArray=[];
+setTimeout(userInput, 30);
+// //Confronto array
 let arrayWin='';
-//setTimeout(confrontoArray,500);
+setTimeout(confrontoArray,500);
