@@ -44,16 +44,13 @@ for(let i=0;i<5;i++){
 //Creazione Ciclo for Array numeri random
 let num=[];
 for(let i=0; i<5; i++){
-    const randomNum = getRandomInt(1,5);
+    const randomNum = getRandomInt(1,90);
     num.push(randomNum);
-    const createdElement = elementCreator('li','list-element', i);
-    myAppendElement('list', createdElement);
 }
 console.log(num);
 //Creazione timeout 30s per poi inserire 5 prompt
 let userArray=[];
-setTimeout(userInput, 30);
-
+setTimeout(userInput, 30000);
 //Confronto array
 let arrayWin='';
 setTimeout(confrontoArray,500);
