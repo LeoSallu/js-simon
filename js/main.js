@@ -40,17 +40,19 @@ for(let i=0;i<5;i++){
 }
 }
                     // Main
-
 //Creazione Ciclo for Array numeri random
 let num=[];
+const ulist = document.querySelector('.list');
 for(let i=0; i<5; i++){
     const randomNum = getRandomInt(1,90);
     num.push(randomNum);
+    let list = elementCreator('li','list-item', num[i]);
+    myAppendElement('list',list);
 }
 console.log(num);
 //Creazione timeout 30s per poi inserire 5 prompt
-let userArray=[];
+// let userArray=[];
 setTimeout(userInput, 30000);
 //Confronto array
 let arrayWin='';
-setTimeout(confrontoArray,500);
+//setTimeout(confrontoArray,500);
