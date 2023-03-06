@@ -7,18 +7,22 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
   }
-//function myCreateElement(htmltag, content)
-
-
-
-
+function elementCreator(htmlElement,className,htmlValue){
+    const element = document.createElement(htmlElement);
+    element.classList.add(className);
+    element.innerText = htmlValue;    
+    return element;
+}
+function myAppendElement(containerElement,htmlElement){
+    containerElement.append(htmlElement);
+}
 
 
 // Main
-
-const numBox= document.querySelector('.list');
-
+const list = document.querySelector('.list');
 for(let i=0; i<5; i++){
-    let number = getRandomInt(1, 50);
-    console.log(number);
+const randomNum = elementCreator('li','list-element', getRandomInt(1,50));
+myAppendElement(list, randomNum);
 }
+
+
