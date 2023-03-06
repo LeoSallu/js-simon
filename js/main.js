@@ -21,21 +21,39 @@ function myAppendElement(containerElement,htmlElement){
 }
 //Funzione per prompt utente
 function userInput(){
-    let userArray=[];
     for(let i=0;i<5; i++){
     const userNum = Number(prompt('Inserisci un numero'));
     userArray.push(userNum);
     }
     console.log(userArray);
 }
+//Confronto array
+function confrontoArray(){
+for(let i=0;i<5;i++){
+    if(userArray===num){
+        arrayWin.push(userArray);
+        console.log('Hai vinto');
+    }
+    else{
+        console.log('Non hai vinto nulla');
+    }
+}
+}
                     // Main
 
 //Creazione Ciclo for Array numeri random
 let num=[];
 for(let i=0; i<5; i++){
-    const randomNum = getRandomInt(1,50);
+    const randomNum = getRandomInt(1,5);
     num.push(randomNum);
+    const createdElement = elementCreator('li','list-element', i);
+    myAppendElement('list', createdElement);
 }
 console.log(num);
 //Creazione timeout 30s per poi inserire 5 prompt
-userInput();
+let userArray=[];
+setTimeout(userInput, 30);
+
+//Confronto array
+let arrayWin='';
+setTimeout(confrontoArray,500);
